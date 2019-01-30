@@ -1,3 +1,32 @@
+---
+apiVersion: policy/v1beta1
+kind: PodDisruptionBudget
+metadata:
+  name: nsqd-budget
+  labels:
+    app: nsq
+    component: nsqd
+spec:
+  selector:
+    matchLabels:
+      app: nsq
+      component: nsqd
+  minAvailable: 1
+---
+apiVersion: policy/v1beta1
+kind: PodDisruptionBudget
+metadata:
+  name: nsqlookupd-budget
+  labels:
+    app: nsq
+    component: nsqlookupd
+spec:
+  selector:
+    matchLabels:
+      app: nsq
+      component: nsqlookupd
+  minAvailable: 1
+---
 apiVersion: v1
 kind: Service
 metadata:
