@@ -11,3 +11,4 @@ This will create:
 - 3 replica StatefulSet + Service for nsqd with 1GB persistent volumes (default 'ssd' StorageClass, you can choose your own)
 - Deployment + Service for nsqadmin
 - Ingress for nsqadmin (default host 'nsq.example.com')
+- PodDisruptionBudgets for nsqd and nsqlookupd
